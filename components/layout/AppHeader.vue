@@ -19,10 +19,12 @@ watch(() => route.path, () => { mobileOpen.value = false })
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <NuxtLink to="/" class="flex items-center gap-3 group" aria-label="錡利鑫實業有限公司 首頁">
-          <img
+          <NuxtImg
             src="/images/logo/logo-icon.png"
             alt="CLX 錡利鑫實業"
             class="h-10 w-auto object-contain"
+            width="40"
+            height="40"
           />
           <div class="flex flex-col leading-none">
             <span class="text-lg font-black text-brand-light tracking-wider">CLX</span>

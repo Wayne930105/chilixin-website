@@ -20,10 +20,12 @@ const currentYear = new Date().getFullYear()
         <!-- 公司資訊 -->
         <div class="lg:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <img
+            <NuxtImg
               src="/images/logo/logo-icon.png"
               alt="CLX 錡利鑫實業"
               class="h-10 w-auto object-contain"
+              width="40"
+              height="40"
             />
             <div>
               <p class="text-lg font-black text-white tracking-wider">CLX</p>
