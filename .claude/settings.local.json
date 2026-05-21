@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(npm show *)",
+      "Bash(npx nuxi@latest init . --package-manager npm)",
+      "Bash(npx nuxi@latest init . --package-manager npm --template minimal)",
+      "Bash(npm install *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(npm run *)",
+      "Bash(Select-Object FullName)",
+      "Bash(Sort-Object FullName)",
+      "Bash(xargs grep -l \"\\\\.jpg\")",
+      "Bash(xargs sed -i 's/\\\\.jpg/.png/g')"
+    ]
+  }
+}
