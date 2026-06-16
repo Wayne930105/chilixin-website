@@ -12,7 +12,11 @@
       "Bash(Select-Object FullName)",
       "Bash(Sort-Object FullName)",
       "Bash(xargs grep -l \"\\\\.jpg\")",
-      "Bash(xargs sed -i 's/\\\\.jpg/.png/g')"
+      "Bash(xargs sed -i 's/\\\\.jpg/.png/g')",
+      "Bash(npx nuxi *)",
+      "Bash(node -e \"const p = require\\('./node_modules/@nuxt/content/package.json'\\); console.log\\('@nuxt/content:', p.version\\)\")",
+      "Bash(node -e \"const p = require\\('./node_modules/@nuxt/image/package.json'\\); console.log\\('@nuxt/image:', p.version\\)\")",
+      "Bash(node -e \"const p = require\\('./node_modules/@nuxtjs/sitemap/package.json'\\); console.log\\('@nuxtjs/sitemap:', p.version\\)\")"
     ]
   }
 }

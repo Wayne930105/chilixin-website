@@ -63,14 +63,10 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
   ],
 
-  content: {
-    highlight: {
-      theme: 'github-dark',
-    },
-  },
+  content: {},
 
   image: {
-    formats: ['webp', 'avif'],
+    format: ['webp', 'avif'],
     quality: 80,
     screens: {
       xs: 320,
@@ -80,10 +76,6 @@ export default defineNuxtConfig({
       xl: 1280,
       '2xl': 1536,
     },
-  },
-
-  sitemap: {
-    siteUrl: 'https://www.chilixin.com.tw',
   },
 
   robots: {
