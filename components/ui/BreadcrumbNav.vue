@@ -12,12 +12,12 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: '首頁', item: 'https://www.chilixin.com.tw/' },
+          { '@type': 'ListItem', position: 1, name: '首頁', item: 'https://chilixin.com/' },
           ...props.items.map((item, index) => ({
             '@type': 'ListItem',
             position: index + 2,
             name: item.label,
-            item: `https://www.chilixin.com.tw${item.path}`,
+            item: `https://chilixin.com${item.path}`,
           })),
         ],
       }),

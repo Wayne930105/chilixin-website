@@ -15,7 +15,7 @@ useHead({
         '@type': 'Organization',
         name: '錡利鑫實業有限公司',
         alternateName: 'Chilixin Industrial Co., Ltd.',
-        url: 'https://www.chilixin.com.tw',
+        url: 'https://chilixin.com',
         telephone: '+886-4-26996011',
         email: 'qilixin17@gmail.com',
         address: {

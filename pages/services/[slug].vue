@@ -32,7 +32,7 @@ useHead({
         provider: {
           '@type': 'Organization',
           name: '錡利鑫實業有限公司',
-          url: 'https://www.chilixin.com.tw',
+          url: 'https://chilixin.com',
           telephone: '+886-4-26996011',
         },
       })),

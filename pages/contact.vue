@@ -14,11 +14,11 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'ContactPage',
         name: '聯絡錡利鑫實業有限公司',
-        url: 'https://www.chilixin.com.tw/contact',
+        url: 'https://chilixin.com/contact',
         publisher: {
           '@type': 'Organization',
           name: '錡利鑫實業有限公司',
-          url: 'https://www.chilixin.com.tw',
+          url: 'https://chilixin.com',
         },
       }),
     },

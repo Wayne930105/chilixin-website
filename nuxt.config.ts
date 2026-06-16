@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   ssr: true,
 
   site: {
-    url: 'https://www.chilixin.com.tw',
+    url: 'https://chilixin.com',
     name: '錡利鑫實業有限公司',
   },
 
