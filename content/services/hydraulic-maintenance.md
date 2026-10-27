@@ -10,6 +10,10 @@ industries:
   - 金屬加工
   - 模具製造
   - 廠房設施
+tags:
+  - 定期保養
+  - 故障排除
+  - 元件更換
 featured: true
 ---
 

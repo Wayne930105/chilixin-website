@@ -1,12 +1,8 @@
 <script setup lang="ts">
-const serviceLinks = [
-  { label: '液壓高壓配管', path: '/services/hydraulic-piping' },
-  { label: '油壓管路油洗', path: '/services/hydraulic-flushing' },
-  { label: '油壓設備維護', path: '/services/hydraulic-maintenance' },
-  { label: '液壓機械門製作', path: '/services/door-fabrication' },
-  { label: '焊接工程', path: '/services/welding-engineering' },
-  { label: '配管工程', path: '/services/piping-engineering' },
-]
+const { data: services } = await useServices()
+const serviceLinks = computed(() =>
+  (services.value ?? []).map(s => ({ label: s.title, path: s.path })),
+)
 
 const currentYear = new Date().getFullYear()
 </script>
@@ -73,7 +69,7 @@ const currentYear = new Date().getFullYear()
 
         <!-- 服務項目 -->
         <div>
-          <h3 class="text-sm font-bold text-brand-light uppercase tracking-widest mb-4 pb-2 border-b border-brand-blue/30">
+          <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-4 pb-2 border-b border-brand-blue/30">
             服務項目
           </h3>
           <ul class="space-y-2">
@@ -91,7 +87,7 @@ const currentYear = new Date().getFullYear()
 
         <!-- 快速連結 -->
         <div>
-          <h3 class="text-sm font-bold text-brand-light uppercase tracking-widest mb-4 pb-2 border-b border-brand-blue/30">
+          <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-4 pb-2 border-b border-brand-blue/30">
             快速連結
           </h3>
           <ul class="space-y-2">
@@ -125,7 +121,7 @@ const currentYear = new Date().getFullYear()
 
     <!-- 版權列 -->
     <div class="border-t border-white/5">
-      <div class="section-container py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-brand-steel">
+      <div class="section-container py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-brand-steel text-center sm:text-left">
         <p>© {{ currentYear }} 錡利鑫實業有限公司 Chilixin Industrial Co., Ltd. All rights reserved.</p>
         <p>Taiwan Heavy Industrial Engineering</p>
       </div>

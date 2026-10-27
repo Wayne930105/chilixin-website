@@ -10,6 +10,10 @@ industries:
   - 倉儲物流
   - 機械製造
   - 廠房設施
+tags:
+  - 客製設計
+  - 廠房應用
+  - 安全認證
 featured: false
 ---
 

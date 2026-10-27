@@ -12,6 +12,7 @@ export const collections = {
       coverImage: z.string().optional(),
       icon: z.string().optional(),
       industries: z.array(z.string()).optional(),
+      tags: z.array(z.string()).optional(),
       featured: z.boolean().default(false),
     }),
   }),

@@ -24,7 +24,7 @@
     </div>
 
     <!-- 內容 -->
-    <div class="relative section-container py-24">
+    <div class="relative section-container w-full py-24">
       <div class="max-w-2xl animate-slide-up">
         <!-- 標籤 -->
         <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue/20 border border-brand-blue/40 rounded-sm mb-6">

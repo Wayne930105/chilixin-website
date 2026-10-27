@@ -10,6 +10,10 @@ industries:
   - 鋼鐵製造
   - 化工設備
   - 模具製造
+tags:
+  - 循環沖洗
+  - 清潔度檢測
+  - 污染控制
 featured: true
 ---
 

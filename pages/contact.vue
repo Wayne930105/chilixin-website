@@ -49,15 +49,8 @@ async function handleSubmit() {
   }
 }
 
-const services = [
-  '液壓高壓配管工程',
-  '油壓管路油洗',
-  '油壓設備維護',
-  '液壓機械門製作',
-  '焊接工程',
-  '配管工程',
-  '其他',
-]
+const { data: serviceList } = await useServices()
+const services = computed(() => [...(serviceList.value ?? []).map(s => s.title), '其他'])
 </script>
 
 <template>
@@ -229,15 +222,22 @@ const services = [
                 <label class="block text-sm font-medium text-brand-steel mb-1.5" for="service">
                   詢問服務項目
                 </label>
-                <select
-                  id="service"
-                  v-model="form.service"
-                  class="w-full px-4 py-3 bg-brand-card border border-slate-300 rounded-sm text-brand-light
-                         focus:outline-none focus:border-brand-blue transition-colors text-sm appearance-none"
-                >
-                  <option value="" disabled>請選擇服務項目</option>
-                  <option v-for="s in services" :key="s" :value="s">{{ s }}</option>
-                </select>
+                <div class="relative">
+                  <select
+                    id="service"
+                    v-model="form.service"
+                    class="w-full pl-4 pr-10 py-3 bg-brand-card border border-slate-300 rounded-sm
+                           focus:outline-none focus:border-brand-blue transition-colors text-sm appearance-none"
+                    :class="form.service ? 'text-brand-light' : 'text-slate-400'"
+                  >
+                    <option value="" disabled>請選擇服務項目</option>
+                    <option v-for="s in services" :key="s" :value="s" class="text-brand-light">{{ s }}</option>
+                  </select>
+                  <!-- 下拉箭頭 -->
+                  <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-steel" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
               </div>
 
               <div>

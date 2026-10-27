@@ -10,6 +10,10 @@ industries:
   - 化工廠
   - 食品加工
   - 工業廠房
+tags:
+  - 廠房配管
+  - 系統整合
+  - 壓力試驗
 featured: false
 ---
 

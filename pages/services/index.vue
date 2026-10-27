@@ -7,9 +7,7 @@ useSeoMeta({
   ogImage: 'https://chilixin.com/images/og-image.jpg',
 })
 
-const { data: services } = await useAsyncData('services-list', () =>
-  queryCollection('services').order('order', 'ASC').all()
-)
+const { data: services } = await useServices()
 </script>
 
 <template>
@@ -33,15 +31,15 @@ const { data: services } = await useAsyncData('services-list', () =>
     <!-- 服務列表 -->
     <section class="py-16 bg-brand-dark">
       <div class="section-container">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           <ServiceCard
             v-for="service in services"
             :key="service.path"
             :title="service.title"
             :short-description="service.shortDescription"
             :icon="service.icon"
-            :slug="service.path?.split('/').pop() ?? ''"
-            :industries="service.industries"
+            :path="service.path"
+            :tags="service.tags"
           />
         </div>
       </div>

@@ -10,6 +10,10 @@ industries:
   - 精密機械
   - 化工設備
   - 廠房建置
+tags:
+  - 氬焊
+  - 鋼構焊接
+  - 管路焊接
 featured: true
 ---
 
