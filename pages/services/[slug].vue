@@ -15,7 +15,7 @@ useSeoMeta({
   title: () => `${service.value?.title} | 錡利鑫實業有限公司`,
   description: () => service.value?.shortDescription ?? '',
   ogTitle: () => `${service.value?.title} | 錡利鑫實業`,
-  ogImage: () => service.value?.coverImage ?? '/images/og-image.png',
+  ogImage: () => `https://chilixin.com${service.value?.coverImage ?? '/images/og-image.jpg'}`,
 })
 
 useHead({
@@ -85,7 +85,10 @@ useHead({
         :src="service.coverImage"
         :alt="`${service.title}現場施工`"
         class="w-full h-full object-cover"
-        loading="lazy"
+        loading="eager"
+        fetchpriority="high"
+        sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+        densities="x1"
         format="webp"
         :width="1440"
         :height="412"

@@ -15,7 +15,7 @@ useSeoMeta({
   title: () => `${project.value?.title} | 工程案例 | 錡利鑫實業`,
   description: () => project.value?.description ?? '',
   ogTitle: () => `${project.value?.title} | 錡利鑫實業`,
-  ogImage: () => project.value?.coverImage ?? '/images/og-image.png',
+  ogImage: () => `https://chilixin.com${project.value?.coverImage ?? '/images/og-image.jpg'}`,
 })
 </script>
 
@@ -57,7 +57,10 @@ useSeoMeta({
         :src="project.coverImage"
         :alt="project.title"
         class="w-full h-full object-cover"
-        loading="lazy"
+        loading="eager"
+        fetchpriority="high"
+        sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+        densities="x1"
         format="webp"
         :width="1440"
         :height="480"

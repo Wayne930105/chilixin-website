@@ -27,7 +27,6 @@ export default {
       },
       backgroundImage: {
         'gradient-brand': 'linear-gradient(135deg, #1A7DC4 0%, #29ABE2 100%)',
-        'gradient-dark': 'linear-gradient(180deg, #0D1117 0%, #111827 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

@@ -4,7 +4,7 @@ titleEn: "Hydraulic High-Pressure Piping"
 order: 1
 shortDescription: "依工程規格設計、製作與安裝液壓高壓管路系統，確保承壓安全、流量效率與長期穩定運作。"
 icon: "🔧"
-coverImage: "/images/services/hydraulic-piping.png"
+coverImage: "/images/services/hydraulic-piping.jpg"
 industries:
   - 精密機械
   - 模具製造

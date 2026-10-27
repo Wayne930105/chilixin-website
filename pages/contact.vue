@@ -3,7 +3,7 @@ useSeoMeta({
   title: '聯絡我們 | 錡利鑫實業有限公司 | 油壓工程詢問',
   description: '聯絡錡利鑫實業，詢問油壓配管、液壓維護、焊接工程服務報價。電話：04-26996011，地址：台中市大肚區博愛街52巷17號。',
   ogTitle: '聯絡錡利鑫實業 | 液壓工程詢問',
-  ogImage: '/images/og-image.png',
+  ogImage: 'https://chilixin.com/images/og-image.jpg',
 })
 
 useHead({
@@ -152,7 +152,7 @@ const services = [
             </div>
 
             <!-- 服務時間 -->
-            <div class="p-4 bg-brand-card border border-white/5 rounded-sm">
+            <div class="p-4 bg-brand-navy border border-slate-200 rounded-sm">
               <p class="text-xs text-brand-steel uppercase tracking-widest mb-2">服務時間</p>
               <p class="text-sm text-brand-light">週一至週五 8:00 – 17:30</p>
               <p class="text-xs text-brand-steel mt-1">緊急維修請直接來電</p>
@@ -165,13 +165,13 @@ const services = [
 
             <!-- 成功訊息 -->
             <div v-if="status === 'success'"
-              class="p-6 bg-green-900/20 border border-green-500/30 rounded-sm text-green-400 text-center"
+              class="p-6 bg-green-50 border border-green-200 rounded-sm text-green-700 text-center"
             >
               <svg class="w-12 h-12 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
               <p class="font-bold text-lg mb-1">詢問已送出！</p>
-              <p class="text-sm text-green-400/80">感謝您的詢問，我們將於一個工作日內與您聯繫。</p>
+              <p class="text-sm text-green-700/80">感謝您的詢問，我們將於一個工作日內與您聯繫。</p>
             </div>
 
             <form v-else @submit.prevent="handleSubmit" class="space-y-5">
@@ -189,7 +189,7 @@ const services = [
                     type="text"
                     required
                     placeholder="請輸入貴公司名稱"
-                    class="w-full px-4 py-3 bg-brand-card border border-white/10 rounded-sm text-brand-light placeholder-brand-steel/50
+                    class="w-full px-4 py-3 bg-brand-card border border-slate-300 rounded-sm text-brand-light placeholder-slate-400
                            focus:outline-none focus:border-brand-blue transition-colors text-sm"
                   />
                 </div>
@@ -203,7 +203,7 @@ const services = [
                     type="text"
                     required
                     placeholder="請輸入您的姓名"
-                    class="w-full px-4 py-3 bg-brand-card border border-white/10 rounded-sm text-brand-light placeholder-brand-steel/50
+                    class="w-full px-4 py-3 bg-brand-card border border-slate-300 rounded-sm text-brand-light placeholder-slate-400
                            focus:outline-none focus:border-brand-blue transition-colors text-sm"
                   />
                 </div>
@@ -220,7 +220,7 @@ const services = [
                     type="tel"
                     required
                     placeholder="02-XXXXXXXX 或 09XX-XXXXXX"
-                    class="w-full px-4 py-3 bg-brand-card border border-white/10 rounded-sm text-brand-light placeholder-brand-steel/50
+                    class="w-full px-4 py-3 bg-brand-card border border-slate-300 rounded-sm text-brand-light placeholder-slate-400
                            focus:outline-none focus:border-brand-blue transition-colors text-sm"
                   />
                 </div>
@@ -233,7 +233,7 @@ const services = [
                     v-model="form.email"
                     type="email"
                     placeholder="your@company.com"
-                    class="w-full px-4 py-3 bg-brand-card border border-white/10 rounded-sm text-brand-light placeholder-brand-steel/50
+                    class="w-full px-4 py-3 bg-brand-card border border-slate-300 rounded-sm text-brand-light placeholder-slate-400
                            focus:outline-none focus:border-brand-blue transition-colors text-sm"
                   />
                 </div>
@@ -246,7 +246,7 @@ const services = [
                 <select
                   id="service"
                   v-model="form.service"
-                  class="w-full px-4 py-3 bg-brand-card border border-white/10 rounded-sm text-brand-light
+                  class="w-full px-4 py-3 bg-brand-card border border-slate-300 rounded-sm text-brand-light
                          focus:outline-none focus:border-brand-blue transition-colors text-sm appearance-none"
                 >
                   <option value="" disabled>請選擇服務項目</option>
@@ -264,12 +264,12 @@ const services = [
                   required
                   rows="5"
                   placeholder="請描述您的需求，例如：設備型號、管路規格、緊急程度等，我們將盡快評估並回覆。"
-                  class="w-full px-4 py-3 bg-brand-card border border-white/10 rounded-sm text-brand-light placeholder-brand-steel/50
+                  class="w-full px-4 py-3 bg-brand-card border border-slate-300 rounded-sm text-brand-light placeholder-slate-400
                          focus:outline-none focus:border-brand-blue transition-colors text-sm resize-none"
                 />
               </div>
 
-              <div v-if="status === 'error'" class="p-3 bg-red-900/20 border border-red-500/30 rounded-sm text-red-400 text-sm">
+              <div v-if="status === 'error'" class="p-3 bg-red-50 border border-red-200 rounded-sm text-red-700 text-sm">
                 {{ errorMsg }}
               </div>
 

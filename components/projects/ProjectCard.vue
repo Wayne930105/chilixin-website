@@ -50,13 +50,13 @@ defineProps<{
         <span
           v-for="tag in tags.slice(0, 3)"
           :key="tag"
-          class="text-xs px-2 py-0.5 bg-brand-card border border-white/5 text-brand-steel rounded-sm"
+          class="text-xs px-2 py-0.5 bg-slate-50 border border-slate-200 text-brand-steel rounded-sm"
         >
           #{{ tag }}
         </span>
       </div>
 
-      <div class="flex items-center gap-1 text-xs font-bold text-brand-blue group-hover:text-brand-cyan transition-colors pt-2 border-t border-white/5 mt-auto">
+      <div class="flex items-center gap-1 text-xs font-bold text-brand-blue group-hover:text-brand-cyan transition-colors pt-2 border-t border-slate-200 mt-auto">
         查看詳情
         <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>

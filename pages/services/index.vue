@@ -3,7 +3,7 @@ useSeoMeta({
   title: '服務項目 | 錡利鑫實業有限公司 | 油壓配管・焊接・配管工程',
   description: '錡利鑫實業提供液壓高壓配管、油壓管路油洗、液壓設備維護、液壓機械門製作、焊接工程、配管工程等重工業專業服務，服務台灣各大工業廠房。',
   ogTitle: '服務項目 | 錡利鑫實業有限公司',
-  ogImage: '/images/og-image.png',
+  ogImage: 'https://chilixin.com/images/og-image.jpg',
 })
 
 const { data: services } = await useAsyncData('services-list', () =>

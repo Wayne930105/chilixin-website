@@ -4,7 +4,7 @@ titleEn: "Industrial Piping Engineering"
 order: 6
 shortDescription: "承接工業廠房各類管路系統施工，涵蓋液壓、氣壓、冷卻水、製程管路，整合規劃、施工、測試一條龍服務。"
 icon: "🏗️"
-coverImage: "/images/services/piping-engineering.png"
+coverImage: "/images/services/piping-engineering.jpg"
 industries:
   - 精密機械
   - 化工廠

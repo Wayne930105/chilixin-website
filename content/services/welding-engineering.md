@@ -4,7 +4,7 @@ titleEn: "Welding Engineering"
 order: 5
 shortDescription: "承接各類鋼構、管路焊接工程，具備氬焊（TIG）、電弧焊（MIG/MAG）等多種工法，品質符合 CNS 工業規範。"
 icon: "🔥"
-coverImage: "/images/services/welding.png"
+coverImage: "/images/services/welding.jpg"
 industries:
   - 鋼構工程
   - 精密機械

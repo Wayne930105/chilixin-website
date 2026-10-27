@@ -3,7 +3,7 @@ useSeoMeta({
   title: '關於我們 | 錡利鑫實業有限公司 | 台中液壓工程專家',
   description: '錡利鑫實業有限公司，台中大肚區專業液壓工程公司，深耕重工業領域逾20年，提供液壓配管、設備維護、焊接配管全方位工程服務。',
   ogTitle: '關於錡利鑫實業 | 台中液壓工程專家',
-  ogImage: '/images/og-image.png',
+  ogImage: 'https://chilixin.com/images/og-image.jpg',
 })
 
 useHead({
@@ -73,7 +73,7 @@ useHead({
           <div class="relative">
             <div class="aspect-[4/3] overflow-hidden rounded-sm">
               <NuxtImg
-                src="/images/services/about-factory.png"
+                src="/images/services/about-factory.jpg"
                 alt="錡利鑫實業工廠作業現場"
                 class="w-full h-full object-cover"
                 loading="lazy"

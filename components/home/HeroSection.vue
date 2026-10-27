@@ -1,24 +1,26 @@
 <template>
   <section class="relative min-h-screen flex items-center overflow-hidden" aria-label="主視覺">
-    <!-- 背景圖（液壓管路特寫，無圖片時顯示深色漸層背景） -->
+    <!-- 背景圖（液壓管路特寫，載入前顯示深色漸層背景） -->
     <div class="absolute inset-0 bg-gradient-to-br from-[#0F1924] via-[#1C2D42] to-[#0F1924]">
       <NuxtImg
-        v-if="true"
-        src="/images/services/hero-bg.png"
+        src="/images/services/hero-bg.jpg"
         alt="專業液壓管路配管工程現場"
         class="w-full h-full object-cover object-center"
         loading="eager"
+        fetchpriority="high"
+        sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+        densities="x1"
         :width="1920"
         :height="1080"
         format="webp"
       />
-      <!-- 幾何裝飾背景（無圖片時的替代視覺） -->
+      <!-- 幾何裝飾背景 -->
       <div class="absolute inset-0 bg-grid-industrial opacity-40" />
       <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-blue/5 to-transparent" />
       <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl" />
       <div class="absolute inset-0 hero-overlay" />
-      <!-- 藍色品牌漸層疊加 -->
-      <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-transparent to-transparent" />
+      <!-- 左側深色漸層，加強標題對比 -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0A121E]/80 via-transparent to-transparent" />
     </div>
 
     <!-- 內容 -->
