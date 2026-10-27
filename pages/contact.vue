@@ -304,6 +304,16 @@ const mapLink = `https://www.google.com/maps/search/?api=1&query=${coords}`
                 {{ errorMsg }}
               </div>
 
+              <!-- 個人資料蒐集告知（個資法第 8 條） -->
+              <p class="flex items-start gap-2 text-xs text-brand-steel leading-relaxed">
+                <svg class="w-4 h-4 flex-shrink-0 mt-px text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                </svg>
+                <span>
+                  送出表單即表示您同意錡利鑫實業有限公司蒐集上述資料。資料僅用於回覆本次詢問與後續服務聯繫，不會提供給第三方；您可隨時來電要求查詢、更正或刪除您的資料。
+                </span>
+              </p>
+
               <button
                 type="submit"
                 :disabled="status === 'sending'"
