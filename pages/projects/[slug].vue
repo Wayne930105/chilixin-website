@@ -12,9 +12,10 @@ if (!project.value) {
 }
 
 useSeoMeta({
-  title: () => `${project.value?.title} | 工程案例 | 錡利鑫實業`,
+  title: () => `${project.value?.title} | 工程案例`,
   description: () => project.value?.description ?? '',
   ogTitle: () => `${project.value?.title} | 錡利鑫實業`,
+  ogDescription: () => project.value?.description ?? '',
   ogImage: () => `https://chilixin.com${project.value?.coverImage ?? '/images/og-image.jpg'}`,
 })
 </script>

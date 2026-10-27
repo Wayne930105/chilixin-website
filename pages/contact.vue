@@ -1,29 +1,15 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: '聯絡我們 | 錡利鑫實業有限公司 | 油壓工程詢問',
+  title: '聯絡我們 | 油壓工程詢問',
   description: '聯絡錡利鑫實業，詢問油壓配管、液壓維護、焊接工程服務報價。電話：04-26996011，地址：台中市大肚區博愛街52巷17號。',
   ogTitle: '聯絡錡利鑫實業 | 液壓工程詢問',
+  ogDescription: '詢問油壓配管、液壓維護、焊接工程服務報價。電話：04-26996011，地址：台中市大肚區博愛街52巷17號。',
   ogImage: 'https://chilixin.com/images/og-image.jpg',
 })
 
-useHead({
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'ContactPage',
-        name: '聯絡錡利鑫實業有限公司',
-        url: 'https://chilixin.com/contact',
-        publisher: {
-          '@type': 'Organization',
-          name: '錡利鑫實業有限公司',
-          url: 'https://chilixin.com',
-        },
-      }),
-    },
-  ],
-})
+useSchemaOrg([
+  defineWebPage({ '@type': 'ContactPage' }),
+])
 
 const form = reactive({
   company: '',

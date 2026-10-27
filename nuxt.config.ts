@@ -7,6 +7,44 @@ export default defineNuxtConfig({
   site: {
     url: 'https://chilixin.com',
     name: '錡利鑫實業有限公司',
+    // GitHub Pages 會把 /about 301 導向 /about/，canonical 與 sitemap 需一致
+    trailingSlash: true,
+  },
+
+  experimental: {
+    defaults: {
+      nuxtLink: { trailingSlash: 'append' },
+    },
+  },
+
+  // 全站共用的企業資訊（LocalBusiness），各頁 Schema 以 @id 引用
+  schemaOrg: {
+    identity: {
+      type: 'LocalBusiness',
+      name: '錡利鑫實業有限公司',
+      alternateName: 'Chilixin Industrial Co., Ltd.',
+      description: '台灣專業液壓工程公司，提供油壓高壓配管、管路油洗、液壓設備維護、液壓機械門製作、焊接工程與配管工程服務。',
+      logo: '/images/logo/logo-icon.png',
+      image: '/images/og-image.jpg',
+      telephone: '+886-4-26996011',
+      faxNumber: '+886-4-26996221',
+      email: 'qilixin17@gmail.com',
+      address: {
+        streetAddress: '博愛街52巷17號',
+        addressLocality: '大肚區',
+        addressRegion: '台中市',
+        postalCode: '432',
+        addressCountry: 'TW',
+      },
+      areaServed: 'TW',
+      openingHoursSpecification: [
+        {
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '08:00',
+          closes: '17:30',
+        },
+      ],
+    },
   },
 
   nitro: {

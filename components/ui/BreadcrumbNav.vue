@@ -1,29 +1,19 @@
 <script setup lang="ts">
+import { withTrailingSlash } from 'ufo'
+
 const props = defineProps<{
   items: Array<{ label: string; path: string }>
 }>()
 
-// Schema.org BreadcrumbList JSON-LD for SEO
-useHead({
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: '首頁', item: 'https://chilixin.com/' },
-          ...props.items.map((item, index) => ({
-            '@type': 'ListItem',
-            position: index + 2,
-            name: item.label,
-            item: `https://chilixin.com${item.path}`,
-          })),
-        ],
-      }),
-    },
-  ],
-})
+// Schema.org BreadcrumbList（網址由 site config 自動補成絕對路徑）
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: [
+      { name: '首頁', item: '/' },
+      ...props.items.map(item => ({ name: item.label, item: withTrailingSlash(item.path) })),
+    ],
+  }),
+])
 </script>
 
 <template>
