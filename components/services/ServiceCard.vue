@@ -15,10 +15,9 @@ withDefaults(defineProps<{
   <!-- 手機版：圖示在左、文字在右的精簡橫向卡片；sm 以上：直向完整卡片 -->
   <NuxtLink :to="path" class="card-industrial group p-4 sm:p-6 flex sm:flex-col items-start gap-4">
     <div
-      class="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 flex items-center justify-center bg-brand-blue/10 border border-brand-blue/20 rounded-sm text-xl sm:text-2xl group-hover:bg-brand-blue/20 transition-colors"
-      aria-hidden="true"
+      class="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 flex items-center justify-center bg-brand-blue/10 border border-brand-blue/20 rounded-sm text-brand-blue group-hover:bg-brand-blue/20 transition-colors"
     >
-      {{ icon ?? '⚙️' }}
+      <AppIcon :name="icon" class="w-5 h-5 sm:w-6 sm:h-6" />
     </div>
 
     <div class="flex-1 min-w-0 self-stretch flex flex-col gap-1.5 sm:gap-4">

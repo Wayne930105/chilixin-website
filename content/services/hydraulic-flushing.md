@@ -3,7 +3,7 @@ title: "油壓管路油洗"
 titleEn: "Hydraulic System Flushing"
 order: 2
 shortDescription: "採用精密循環沖洗技術，有效清除管路內金屬屑、污染物，達到 NAS/ISO 清潔度等級，保護精密液壓元件。"
-icon: "💧"
+icon: "droplets"
 coverImage: "/images/services/hydraulic-flushing.jpg"
 industries:
   - 精密機械

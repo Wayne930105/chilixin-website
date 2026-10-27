@@ -44,8 +44,8 @@ useSchemaOrg([
           { label: service.title, path: route.path },
         ]" />
         <div class="mt-6 flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
-          <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center bg-brand-blue/10 border border-brand-blue/20 rounded-sm text-2xl sm:text-3xl" aria-hidden="true">
-            {{ service.icon ?? '⚙️' }}
+          <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center bg-brand-blue/10 border border-brand-blue/20 rounded-sm text-brand-blue">
+            <AppIcon :name="service.icon" class="w-6 h-6 sm:w-7 sm:h-7" />
           </div>
           <div class="max-w-2xl">
             <SectionHeading
