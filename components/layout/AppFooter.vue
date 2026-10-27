@@ -73,7 +73,7 @@ const currentYear = new Date().getFullYear()
 
         <!-- 服務項目 -->
         <div>
-          <h3 class="text-sm font-bold text-brand-light uppercase tracking-widest mb-4 pb-2 border-b border-brand-blue/30">
+          <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-4 pb-2 border-b border-brand-blue/30">
             服務項目
           </h3>
           <ul class="space-y-2">
@@ -91,7 +91,7 @@ const currentYear = new Date().getFullYear()
 
         <!-- 快速連結 -->
         <div>
-          <h3 class="text-sm font-bold text-brand-light uppercase tracking-widest mb-4 pb-2 border-b border-brand-blue/30">
+          <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-4 pb-2 border-b border-brand-blue/30">
             快速連結
           </h3>
           <ul class="space-y-2">
