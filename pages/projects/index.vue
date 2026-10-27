@@ -23,7 +23,7 @@ const { data: projects } = await useAsyncData('projects-list', () =>
             tag="h1"
             eyebrow="工程實績"
             title="歷年工程案例"
-            subtitle="二十餘年來服務台灣各大重工業廠房，每一件工程都以品質與準時交付為核心承諾。"
+            subtitle="服務台灣各大重工業廠房，每一件工程都以品質與準時交付為核心承諾。"
           />
         </div>
       </div>
