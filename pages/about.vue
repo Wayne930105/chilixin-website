@@ -77,14 +77,16 @@ useSchemaOrg([
         />
         <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div v-for="cap in [
-            { icon: '🔧', title: '液壓系統設計', desc: '依設備需求規劃液壓管路佈局，選用適當元件與管材，確保系統效能與安全性。' },
-            { icon: '💧', title: '精密管路油洗', desc: '運用大流量沖洗設備，依 ISO/NAS 標準執行管路清潔度檢測，確保元件安全。' },
-            { icon: '⚙️', title: '設備故障診斷', desc: '豐富的液壓元件知識，快速精準診斷故障根因，提供最有效的修復方案。' },
-            { icon: '🔥', title: '工業焊接技術', desc: '具備 TIG、MIG/MAG 等多種焊接工法，適應各類管材與施工環境。' },
-            { icon: '🏗️', title: '整廠配管規劃', desc: '從新廠建置到既有廠房改造，提供完整的配管系統規劃與施工服務。' },
-            { icon: '🚨', title: '緊急搶修服務', desc: '設備急修時快速到廠，縮短停機時間，降低生產損失，維護客戶利益。' },
+            { icon: 'pencil-ruler', title: '液壓系統設計', desc: '依設備需求規劃液壓管路佈局，選用適當元件與管材，確保系統效能與安全性。' },
+            { icon: 'droplets', title: '精密管路油洗', desc: '運用大流量沖洗設備，依 ISO/NAS 標準執行管路清潔度檢測，確保元件安全。' },
+            { icon: 'stethoscope', title: '設備故障診斷', desc: '豐富的液壓元件知識，快速精準診斷故障根因，提供最有效的修復方案。' },
+            { icon: 'flame', title: '工業焊接技術', desc: '具備 TIG、MIG/MAG 等多種焊接工法，適應各類管材與施工環境。' },
+            { icon: 'factory', title: '整廠配管規劃', desc: '從新廠建置到既有廠房改造，提供完整的配管系統規劃與施工服務。' },
+            { icon: 'siren', title: '緊急搶修服務', desc: '設備急修時快速到廠，縮短停機時間，降低生產損失，維護客戶利益。' },
           ]" :key="cap.title" class="card-industrial p-6">
-            <div class="text-3xl mb-4">{{ cap.icon }}</div>
+            <div class="w-12 h-12 mb-4 flex items-center justify-center bg-brand-blue/10 border border-brand-blue/20 rounded-sm text-brand-blue">
+              <AppIcon :name="cap.icon" class="w-6 h-6" />
+            </div>
             <h3 class="text-base font-bold text-brand-light mb-2">{{ cap.title }}</h3>
             <p class="text-sm text-brand-steel leading-relaxed">{{ cap.desc }}</p>
           </div>
@@ -103,8 +105,8 @@ useSchemaOrg([
           />
           <div class="mt-8 p-6 bg-brand-blue/5 border border-brand-blue/20 rounded-sm">
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-brand-blue/10 rounded-sm text-xl">
-                🌱
+              <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-brand-blue/10 rounded-sm text-brand-blue">
+                <AppIcon name="sprout" class="w-5 h-5" />
               </div>
               <div>
                 <h3 class="text-base font-bold text-brand-light mb-2">溫室工程與工業自動化</h3>

@@ -3,7 +3,7 @@ title: "油壓設備維護"
 titleEn: "Hydraulic Equipment Maintenance"
 order: 3
 shortDescription: "提供液壓系統定期保養、故障診斷與零件更換服務，縮短設備停機時間，延長系統使用壽命。"
-icon: "⚙️"
+icon: "settings"
 coverImage: "/images/services/hydraulic-maintenance.jpg"
 industries:
   - 精密機械

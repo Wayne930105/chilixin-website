@@ -1,20 +1,8 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: '頁面不存在 | 錡利鑫實業有限公司',
-  robots: 'noindex',
-})
+// 未定義的路由一律交給 error.vue 顯示 404 頁面
+throw createError({ statusCode: 404, statusMessage: '頁面不存在', fatal: true })
 </script>
 
 <template>
-  <div class="min-h-[60vh] flex items-center justify-center">
-    <div class="text-center">
-      <p class="text-8xl font-black text-brand-blue/20 mb-4">404</p>
-      <h1 class="text-2xl font-bold text-brand-light mb-3">頁面不存在</h1>
-      <p class="text-brand-steel mb-8">您所查詢的頁面可能已移除或網址有誤。</p>
-      <div class="flex gap-4 justify-center">
-        <NuxtLink to="/" class="btn-primary">返回首頁</NuxtLink>
-        <NuxtLink to="/contact" class="btn-outline">聯絡我們</NuxtLink>
-      </div>
-    </div>
-  </div>
+  <div />
 </template>
