@@ -23,6 +23,8 @@ export default defineNuxtConfig({
       type: 'LocalBusiness',
       name: '錡利鑫實業有限公司',
       alternateName: 'Chilixin Industrial Co., Ltd.',
+      foundingDate: '2021',
+      sameAs: ['https://line.me/R/ti/p/@128hqkuh'],
       description: '台灣專業液壓工程公司，提供油壓高壓配管、管路油洗、液壓設備維護、液壓機械門製作、焊接工程與配管工程服務。',
       logo: '/images/logo/logo-icon.png',
       image: '/images/og-image.jpg',
@@ -35,6 +37,11 @@ export default defineNuxtConfig({
         addressRegion: '台中市',
         postalCode: '432',
         addressCountry: 'TW',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        'latitude': 24.1620436,
+        'longitude': 120.5456824,
       },
       areaServed: 'TW',
       openingHoursSpecification: [

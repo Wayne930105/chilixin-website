@@ -13,6 +13,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        line: '#06C755',
         brand: {
           blue: '#2589D0',
           cyan: '#38BCEA',

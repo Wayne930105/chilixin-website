@@ -64,9 +64,9 @@
         <!-- 數據統計 -->
         <div class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-white/10">
           <div v-for="stat in [
-            { value: '20+', label: '年工程經驗' },
-            { value: '500+', label: '完工工程案例' },
-            { value: '100%', label: '品質保證' },
+            { value: '2021', label: '年成立' },
+            { value: '300+', label: '完工工程案例' },
+            { value: '全台', label: '服務範圍' },
           ]" :key="stat.label">
             <p class="text-3xl font-black text-gradient-brand">{{ stat.value }}</p>
             <p class="text-xs text-slate-400 mt-1 uppercase tracking-widest">{{ stat.label }}</p>
