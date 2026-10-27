@@ -11,6 +11,13 @@ if (!project.value) {
   throw createError({ statusCode: 404, statusMessage: '工程案例不存在' })
 }
 
+// serviceType 存的是服務 slug，查出對應的中文服務名稱
+const { data: relatedService } = await useAsyncData(`project-service-${route.params.slug}`, () =>
+  project.value?.serviceType
+    ? queryCollection('services').path(`/services/${project.value.serviceType}`).select('title', 'path').first()
+    : Promise.resolve(null)
+)
+
 useSeoMeta({
   title: () => `${project.value?.title} | 工程案例`,
   description: () => project.value?.description ?? '',
@@ -53,7 +60,7 @@ useSeoMeta({
     </section>
 
     <!-- 封面圖 -->
-    <div v-if="project.coverImage" class="aspect-[21/7] overflow-hidden">
+    <div v-if="project.coverImage" class="aspect-video sm:aspect-[21/7] overflow-hidden">
       <NuxtImg
         :src="project.coverImage"
         :alt="project.title"
@@ -64,7 +71,6 @@ useSeoMeta({
         densities="x1"
         format="webp"
         :width="1440"
-        :height="480"
       />
     </div>
 
@@ -76,9 +82,14 @@ useSeoMeta({
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 p-6 bg-white border border-slate-200 rounded-sm shadow-sm">
             <div>
               <p class="text-xs text-brand-steel uppercase tracking-widest mb-1">服務類型</p>
-              <p class="text-sm font-bold text-brand-light capitalize">
-                {{ project.serviceType?.replace(/-/g, ' ') }}
-              </p>
+              <NuxtLink
+                v-if="relatedService"
+                :to="relatedService.path"
+                class="text-sm font-bold text-brand-blue hover:text-brand-blue/70 transition-colors"
+              >
+                {{ relatedService.title }}
+              </NuxtLink>
+              <p v-else class="text-sm font-bold text-brand-light">—</p>
             </div>
             <div>
               <p class="text-xs text-brand-steel uppercase tracking-widest mb-1">客戶產業</p>

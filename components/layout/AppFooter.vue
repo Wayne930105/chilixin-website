@@ -125,7 +125,7 @@ const currentYear = new Date().getFullYear()
 
     <!-- 版權列 -->
     <div class="border-t border-white/5">
-      <div class="section-container py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-brand-steel">
+      <div class="section-container py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-brand-steel text-center sm:text-left">
         <p>© {{ currentYear }} 錡利鑫實業有限公司 Chilixin Industrial Co., Ltd. All rights reserved.</p>
         <p>Taiwan Heavy Industrial Engineering</p>
       </div>

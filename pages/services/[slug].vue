@@ -43,8 +43,8 @@ useSchemaOrg([
           { label: '服務項目', path: '/services' },
           { label: service.title, path: route.path },
         ]" />
-        <div class="mt-6 flex items-start gap-5">
-          <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center bg-brand-blue/10 border border-brand-blue/20 rounded-sm text-3xl">
+        <div class="mt-6 flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center bg-brand-blue/10 border border-brand-blue/20 rounded-sm text-2xl sm:text-3xl" aria-hidden="true">
             {{ service.icon ?? '⚙️' }}
           </div>
           <div class="max-w-2xl">
@@ -58,12 +58,12 @@ useSchemaOrg([
         </div>
 
         <!-- 適用產業標籤 -->
-        <div v-if="service.industries?.length" class="mt-6 flex flex-wrap gap-2">
-          <span class="text-xs text-brand-steel uppercase tracking-widest mr-2">適用產業：</span>
+        <div v-if="service.industries?.length" class="mt-6 flex flex-wrap items-center gap-2">
+          <span class="w-full sm:w-auto text-xs text-brand-steel tracking-widest sm:mr-2">適用產業：</span>
           <span
             v-for="ind in service.industries"
             :key="ind"
-            class="text-xs px-3 py-1 bg-brand-blue/10 border border-brand-blue/20 text-brand-cyan rounded-sm"
+            class="text-xs px-3 py-1 bg-brand-blue/10 border border-brand-blue/20 text-brand-blue rounded-sm"
           >
             {{ ind }}
           </span>
@@ -72,7 +72,7 @@ useSchemaOrg([
     </section>
 
     <!-- 封面圖 -->
-    <div v-if="service.coverImage" class="aspect-[21/6] overflow-hidden">
+    <div v-if="service.coverImage" class="aspect-video sm:aspect-[21/6] overflow-hidden">
       <NuxtImg
         :src="service.coverImage"
         :alt="`${service.title}現場施工`"
@@ -83,7 +83,6 @@ useSchemaOrg([
         densities="x1"
         format="webp"
         :width="1440"
-        :height="412"
       />
     </div>
 

@@ -61,6 +61,13 @@
     @apply text-brand-blue after:w-full;
   }
 
+  /* Nuxt Content 會把標題包成錨點連結，維持標題原本樣式 */
+  .prose :where(h2, h3, h4) a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+
   /* Logo 漸層文字 */
   .text-gradient-brand {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-cyan;

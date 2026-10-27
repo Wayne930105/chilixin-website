@@ -55,11 +55,11 @@
             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent" />
           </div>
           <!-- 浮動資訊卡 -->
-          <div class="absolute -bottom-4 -left-4 bg-brand-card border border-brand-blue/20 p-4 rounded-sm shadow-xl">
+          <div class="absolute -bottom-4 left-3 sm:-left-4 bg-brand-card border border-brand-blue/20 p-4 rounded-sm shadow-xl">
             <p class="text-3xl font-black text-gradient-brand">20+</p>
             <p class="text-xs text-brand-steel mt-1 uppercase tracking-widest">年工程經驗</p>
           </div>
-          <div class="absolute -top-4 -right-4 bg-brand-orange p-4 rounded-sm shadow-xl">
+          <div class="absolute -top-4 right-3 sm:-right-4 bg-brand-orange p-4 rounded-sm shadow-xl">
             <p class="text-2xl font-black text-white">500+</p>
             <p class="text-xs text-white/80 mt-1 uppercase tracking-widest">完工案件</p>
           </div>
