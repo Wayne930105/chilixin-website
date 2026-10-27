@@ -5,6 +5,9 @@ clientIndustry: "金屬加工"
 year: 2023
 serviceType: "piping-engineering"
 duration: "45 天"
+coverImage: "/images/projects/factory-welding-project.jpg"
+gallery:
+  - "/images/projects/factory-welding-project-1.jpg"
 tags:
   - 配管工程
   - 鋼構焊接
