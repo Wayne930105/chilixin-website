@@ -5,6 +5,9 @@ clientIndustry: "鋼鐵製造"
 year: 2024
 serviceType: "hydraulic-flushing"
 duration: "21 天"
+coverImage: "/images/projects/steel-plant-flushing-2024.jpg"
+gallery:
+  - "/images/projects/steel-plant-flushing-2024-1.jpg"
 tags:
   - 液壓沖洗
   - 鋼鐵業

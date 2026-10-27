@@ -18,6 +18,12 @@ const { data: relatedService } = await useAsyncData(`project-service-${route.par
     : Promise.resolve(null)
 )
 
+// 工程現場照片：封面（完整比例）＋ gallery
+const photos = computed(() => [
+  ...(project.value?.coverImage ? [project.value.coverImage] : []),
+  ...(project.value?.gallery ?? []),
+])
+
 useSeoMeta({
   title: () => `${project.value?.title} | 工程案例`,
   description: () => project.value?.description ?? '',
@@ -117,6 +123,29 @@ useSeoMeta({
             prose-td:border prose-td:border-slate-200 prose-td:p-3 prose-td:text-brand-steel
           ">
             <ContentRenderer :value="project" />
+          </div>
+
+          <!-- 工程現場照片 -->
+          <div v-if="photos.length > 1" class="mt-14">
+            <h2 class="text-2xl font-bold text-brand-light pb-2 mb-6 border-b border-slate-200">工程現場</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div
+                v-for="(photo, i) in photos"
+                :key="photo"
+                class="aspect-video overflow-hidden rounded-sm bg-brand-navy border border-slate-200"
+              >
+                <NuxtImg
+                  :src="photo"
+                  :alt="`${project.title} 工程現場照片 ${i + 1}`"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  format="webp"
+                  sizes="sm:100vw md:50vw lg:50vw xl:448px 2xl:448px"
+                  :width="896"
+                  :height="504"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

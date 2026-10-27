@@ -5,6 +5,9 @@ clientIndustry: "模具製造"
 year: 2023
 serviceType: "hydraulic-piping"
 duration: "7 天"
+coverImage: "/images/projects/hydraulic-press-overhaul.jpg"
+gallery:
+  - "/images/projects/hydraulic-press-overhaul-1.jpg"
 tags:
   - 液壓配管
   - 模具業
