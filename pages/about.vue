@@ -1,35 +1,15 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: '關於我們 | 錡利鑫實業有限公司 | 台中液壓工程專家',
+  title: '關於我們 | 台中液壓工程專家',
   description: '錡利鑫實業有限公司，台中大肚區專業液壓工程公司，深耕重工業領域逾20年，提供液壓配管、設備維護、焊接配管全方位工程服務。',
   ogTitle: '關於錡利鑫實業 | 台中液壓工程專家',
-  ogImage: '/images/og-image.png',
+  ogDescription: '台中大肚區專業液壓工程公司，深耕重工業領域逾20年，提供液壓配管、設備維護、焊接配管全方位工程服務。',
+  ogImage: 'https://chilixin.com/images/og-image.jpg',
 })
 
-useHead({
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
-        name: '錡利鑫實業有限公司',
-        alternateName: 'Chilixin Industrial Co., Ltd.',
-        url: 'https://chilixin.com',
-        telephone: '+886-4-26996011',
-        email: 'qilixin17@gmail.com',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: '博愛街52巷17號',
-          addressLocality: '大肚區',
-          addressRegion: '台中市',
-          postalCode: '432',
-          addressCountry: 'TW',
-        },
-      }),
-    },
-  ],
-})
+useSchemaOrg([
+  defineWebPage({ '@type': 'AboutPage' }),
+])
 </script>
 
 <template>
@@ -73,7 +53,7 @@ useHead({
           <div class="relative">
             <div class="aspect-[4/3] overflow-hidden rounded-sm">
               <NuxtImg
-                src="/images/services/about-factory.png"
+                src="/images/services/about-factory.jpg"
                 alt="錡利鑫實業工廠作業現場"
                 class="w-full h-full object-cover"
                 loading="lazy"

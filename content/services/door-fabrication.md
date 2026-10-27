@@ -4,7 +4,7 @@ titleEn: "Hydraulic Mechanical Door Fabrication & Maintenance"
 order: 4
 shortDescription: "客製化液壓機械門設計、製作與安裝，適用於重型廠房、倉儲中心及工業設施，確保開關動作穩定可靠。"
 icon: "🚪"
-coverImage: "/images/services/door-fabrication.png"
+coverImage: "/images/services/door-fabrication.jpg"
 industries:
   - 重工業廠房
   - 倉儲物流

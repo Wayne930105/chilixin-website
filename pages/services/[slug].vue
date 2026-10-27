@@ -12,33 +12,25 @@ if (!service.value) {
 }
 
 useSeoMeta({
-  title: () => `${service.value?.title} | 錡利鑫實業有限公司`,
+  title: () => service.value?.title,
   description: () => service.value?.shortDescription ?? '',
   ogTitle: () => `${service.value?.title} | 錡利鑫實業`,
-  ogImage: () => service.value?.coverImage ?? '/images/og-image.png',
+  ogDescription: () => service.value?.shortDescription ?? '',
+  ogImage: () => `https://chilixin.com${service.value?.coverImage ?? '/images/og-image.jpg'}`,
 })
 
-useHead({
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: computed(() => JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: service.value?.title ?? '',
-        description: service.value?.shortDescription ?? '',
-        serviceType: '液壓工程',
-        areaServed: 'TW',
-        provider: {
-          '@type': 'Organization',
-          name: '錡利鑫實業有限公司',
-          url: 'https://chilixin.com',
-          telephone: '+886-4-26996011',
-        },
-      })),
-    },
-  ],
-})
+// @unhead/schema-org 的 Vue 版未提供 defineService，以一般節點描述並引用全站 identity
+useSchemaOrg([
+  {
+    '@type': 'Service',
+    'name': service.value.title,
+    'description': service.value.shortDescription,
+    'image': service.value.coverImage ? `https://chilixin.com${service.value.coverImage}` : undefined,
+    'serviceType': '液壓工程',
+    'areaServed': 'TW',
+    'provider': { '@id': 'https://chilixin.com/#identity' },
+  },
+])
 </script>
 
 <template>
@@ -85,7 +77,10 @@ useHead({
         :src="service.coverImage"
         :alt="`${service.title}現場施工`"
         class="w-full h-full object-cover"
-        loading="lazy"
+        loading="eager"
+        fetchpriority="high"
+        sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+        densities="x1"
         format="webp"
         :width="1440"
         :height="412"
