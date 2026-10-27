@@ -49,20 +49,10 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'github-pages',
+    // 從首頁沿著連結爬取所有頁面；有壞掉的連結時讓建置失敗，避免部署出錯的網站
     prerender: {
-      failOnError: false,
+      failOnError: true,
       crawlLinks: true,
-      routes: [
-        '/services/hydraulic-piping',
-        '/services/hydraulic-flushing',
-        '/services/hydraulic-maintenance',
-        '/services/door-fabrication',
-        '/services/welding-engineering',
-        '/services/piping-engineering',
-        '/projects/steel-plant-flushing-2024',
-        '/projects/hydraulic-press-overhaul',
-        '/projects/factory-welding-project',
-      ],
     },
   },
 
@@ -77,9 +67,12 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/logo/logo-icon.png' },
-        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/logo/logo-icon.png' },
-        { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/logo/logo-icon.png' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap',
@@ -125,15 +118,5 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
     typeCheck: false,
-  },
-
-  routeRules: {
-    '/': { prerender: true },
-    '/services': { prerender: true },
-    '/services/**': { prerender: true },
-    '/projects': { prerender: true },
-    '/projects/**': { prerender: true },
-    '/about': { prerender: true },
-    '/contact': { prerender: true },
   },
 })

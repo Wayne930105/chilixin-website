@@ -20,7 +20,7 @@ const currentYear = new Date().getFullYear()
               src="/images/logo/logo-icon.png"
               alt="CLX 錡利鑫實業"
               class="h-10 w-auto object-contain"
-              width="40"
+              width="43"
               height="40"
             />
             <div>
