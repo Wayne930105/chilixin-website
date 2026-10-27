@@ -11,6 +11,13 @@ const navLinks = [
 ]
 
 watch(() => route.path, () => { mobileOpen.value = false })
+
+// 按 Esc 關閉手機選單
+function onKeydown(e: KeyboardEvent) {
+  if (e.key === 'Escape') mobileOpen.value = false
+}
+onMounted(() => window.addEventListener('keydown', onKeydown))
+onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
 </script>
 
 <template>
@@ -23,7 +30,7 @@ watch(() => route.path, () => { mobileOpen.value = false })
             src="/images/logo/logo-icon.png"
             alt="CLX 錡利鑫實業"
             class="h-10 w-auto object-contain"
-            width="40"
+            width="43"
             height="40"
           />
           <div class="flex flex-col leading-none">
@@ -63,15 +70,17 @@ watch(() => route.path, () => { mobileOpen.value = false })
         <!-- 手機漢堡 -->
         <button
           class="md:hidden flex flex-col gap-1.5 p-2 rounded"
+          type="button"
           :aria-expanded="mobileOpen"
-          aria-label="開啟選單"
+          aria-controls="mobile-menu"
+          :aria-label="mobileOpen ? '關閉選單' : '開啟選單'"
           @click="mobileOpen = !mobileOpen"
         >
-          <span class="block w-6 h-0.5 bg-brand-light transition-all duration-300"
+          <span class="block w-6 h-0.5 bg-brand-light transition-all duration-300" aria-hidden="true"
             :class="mobileOpen ? 'rotate-45 translate-y-2' : ''" />
-          <span class="block w-6 h-0.5 bg-brand-light transition-all duration-300"
+          <span class="block w-6 h-0.5 bg-brand-light transition-all duration-300" aria-hidden="true"
             :class="mobileOpen ? 'opacity-0' : ''" />
-          <span class="block w-6 h-0.5 bg-brand-light transition-all duration-300"
+          <span class="block w-6 h-0.5 bg-brand-light transition-all duration-300" aria-hidden="true"
             :class="mobileOpen ? '-rotate-45 -translate-y-2' : ''" />
         </button>
       </div>
@@ -86,7 +95,7 @@ watch(() => route.path, () => { mobileOpen.value = false })
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 -translate-y-2"
     >
-      <div v-if="mobileOpen" class="md:hidden bg-white border-t border-slate-200 shadow-lg">
+      <div v-show="mobileOpen" id="mobile-menu" class="md:hidden bg-white border-t border-slate-200 shadow-lg">
         <nav class="section-container py-4 flex flex-col gap-1" aria-label="手機導覽">
           <NuxtLink
             v-for="link in navLinks"
