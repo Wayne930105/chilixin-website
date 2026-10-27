@@ -118,6 +118,35 @@ const mapLink = `https://www.google.com/maps/search/?api=1&query=${coords}`
               </div>
             </div>
 
+            <!-- LINE：桌機顯示 QR Code 供手機掃描，手機直接點按鈕加好友 -->
+            <div class="p-4 bg-line/5 border border-line/30 rounded-sm">
+              <div class="flex items-center gap-2 mb-1">
+                <LineIcon class="w-5 h-5 text-line" />
+                <p class="text-sm font-bold text-brand-light">LINE 線上詢問</p>
+              </div>
+              <p class="text-xs text-brand-steel leading-relaxed mb-3">
+                傳送現場照片、設備型號，我們盡快評估回覆。<br>
+                LINE ID：<span class="font-medium text-brand-light">{{ LINE_ID }}</span>
+              </p>
+              <img
+                src="/images/line-qr.png"
+                :alt="`LINE 官方帳號 ${LINE_ID} 加入好友 QR Code`"
+                class="hidden lg:block w-32 h-32 mb-3 bg-white p-1 border border-slate-200"
+                width="128"
+                height="128"
+                loading="lazy"
+              >
+              <a
+                :href="LINE_URL"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center justify-center gap-2 w-full lg:w-auto px-4 py-2.5 bg-line text-white text-sm font-bold rounded-sm hover:brightness-95 transition"
+              >
+                <LineIcon class="w-4 h-4" />
+                加入 LINE 好友
+              </a>
+            </div>
+
             <!-- 地址 -->
             <div class="flex items-start gap-4">
               <div class="w-9 h-9 flex-shrink-0 flex items-center justify-center bg-brand-blue/10 border border-brand-blue/20 rounded-sm">

@@ -56,6 +56,11 @@ const currentYear = new Date().getFullYear()
               </svg>
               qilixin17@gmail.com
             </a>
+            <a :href="LINE_URL" target="_blank" rel="noopener"
+               class="flex items-center gap-3 text-brand-steel hover:text-brand-cyan transition-colors">
+              <LineIcon class="w-4 h-4 flex-shrink-0 text-line" />
+              LINE：{{ LINE_ID }}
+            </a>
             <p class="flex items-start gap-3 text-brand-steel">
               <svg class="w-4 h-4 flex-shrink-0 mt-0.5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
