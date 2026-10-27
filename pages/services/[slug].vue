@@ -31,6 +31,12 @@ useSchemaOrg([
     'provider': { '@id': 'https://chilixin.com/#identity' },
   },
 ])
+
+// 施工實景照片：封面（完整比例）＋ gallery
+const photos = computed(() => [
+  ...(service.value?.coverImage ? [service.value.coverImage] : []),
+  ...(service.value?.gallery ?? []),
+])
 </script>
 
 <template>
@@ -102,6 +108,29 @@ useSchemaOrg([
             prose-li:text-brand-steel prose-ul:space-y-1
           ">
             <ContentRenderer :value="service" />
+          </div>
+
+          <!-- 施工實景照片 -->
+          <div v-if="photos.length > 1" class="mt-14">
+            <h2 class="text-2xl font-bold text-brand-light pb-2 mb-6 border-b border-slate-200">施工實景</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div
+                v-for="(photo, i) in photos"
+                :key="photo"
+                class="aspect-video overflow-hidden rounded-sm bg-brand-navy border border-slate-200"
+              >
+                <NuxtImg
+                  :src="photo"
+                  :alt="`${service.title}施工實景 ${i + 1}`"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  format="webp"
+                  sizes="sm:100vw md:50vw lg:50vw xl:448px 2xl:448px"
+                  :width="896"
+                  :height="504"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
