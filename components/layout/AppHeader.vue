@@ -18,7 +18,7 @@ watch(() => route.path, () => { mobileOpen.value = false })
     <div class="section-container">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
-        <NuxtLink to="/" class="flex items-center gap-3 group" aria-label="錡利鑫實業有限公司 首頁">
+        <NuxtLink to="/" class="flex flex-shrink-0 items-center gap-3 group whitespace-nowrap" aria-label="錡利鑫實業有限公司 首頁">
           <NuxtImg
             src="/images/logo/logo-icon.png"
             alt="CLX 錡利鑫實業"
@@ -33,12 +33,12 @@ watch(() => route.path, () => { mobileOpen.value = false })
         </NuxtLink>
 
         <!-- 桌面導覽 -->
-        <nav class="hidden md:flex items-center gap-8" aria-label="主要導覽">
+        <nav class="hidden md:flex items-center gap-6 lg:gap-8" aria-label="主要導覽">
           <NuxtLink
             v-for="link in navLinks"
             :key="link.path"
             :to="link.path"
-            class="nav-link pb-1"
+            class="nav-link pb-1 whitespace-nowrap"
             :class="{ active: route.path === link.path || (link.path !== '/' && route.path.startsWith(link.path)) }"
           >
             {{ link.label }}
@@ -47,14 +47,15 @@ watch(() => route.path, () => { mobileOpen.value = false })
 
         <!-- 桌面 CTA -->
         <div class="hidden md:flex items-center gap-4">
-          <a href="tel:+886426996011" class="flex items-center gap-2 text-sm text-brand-steel hover:text-brand-cyan transition-colors">
+          <!-- 平板寬度放不下，電話只在 lg 以上顯示 -->
+          <a href="tel:+886426996011" class="hidden lg:flex items-center gap-2 text-sm text-brand-steel hover:text-brand-blue transition-colors whitespace-nowrap">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
             </svg>
             04-26996011
           </a>
-          <NuxtLink to="/contact" class="btn-primary text-sm py-2">
+          <NuxtLink to="/contact" class="btn-primary text-sm py-2 whitespace-nowrap">
             立即詢問
           </NuxtLink>
         </div>

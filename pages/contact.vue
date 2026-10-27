@@ -49,15 +49,8 @@ async function handleSubmit() {
   }
 }
 
-const services = [
-  '液壓高壓配管工程',
-  '油壓管路油洗',
-  '油壓設備維護',
-  '液壓機械門製作',
-  '焊接工程',
-  '配管工程',
-  '其他',
-]
+const { data: serviceList } = await useServices()
+const services = computed(() => [...(serviceList.value ?? []).map(s => s.title), '其他'])
 </script>
 
 <template>

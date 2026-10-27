@@ -10,6 +10,10 @@ industries:
   - 模具製造
   - 金屬加工
   - 鋼鐵製造
+tags:
+  - 高壓管路
+  - 油路設計
+  - 壓力測試
 featured: true
 ---
 

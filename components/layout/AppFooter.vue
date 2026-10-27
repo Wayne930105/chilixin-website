@@ -1,12 +1,8 @@
 <script setup lang="ts">
-const serviceLinks = [
-  { label: '液壓高壓配管', path: '/services/hydraulic-piping' },
-  { label: '油壓管路油洗', path: '/services/hydraulic-flushing' },
-  { label: '油壓設備維護', path: '/services/hydraulic-maintenance' },
-  { label: '液壓機械門製作', path: '/services/door-fabrication' },
-  { label: '焊接工程', path: '/services/welding-engineering' },
-  { label: '配管工程', path: '/services/piping-engineering' },
-]
+const { data: services } = await useServices()
+const serviceLinks = computed(() =>
+  (services.value ?? []).map(s => ({ label: s.title, path: s.path })),
+)
 
 const currentYear = new Date().getFullYear()
 </script>
