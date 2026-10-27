@@ -51,6 +51,11 @@ async function handleSubmit() {
 
 const { data: serviceList } = await useServices()
 const services = computed(() => [...(serviceList.value ?? []).map(s => s.title), '其他'])
+
+// 公司座標（與 nuxt.config 的 schemaOrg geo 一致）
+const coords = '24.1620436,120.5456824'
+const mapEmbed = `https://www.google.com/maps?q=${coords}&hl=zh-TW&z=17&output=embed`
+const mapLink = `https://www.google.com/maps/search/?api=1&query=${coords}`
 </script>
 
 <template>
@@ -127,6 +132,17 @@ const services = computed(() => [...(serviceList.value ?? []).map(s => s.title),
                 <p class="text-brand-light font-medium leading-relaxed">
                   台中市大肚區<br>博愛街52巷17號
                 </p>
+                <a
+                  :href="mapLink"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-1 mt-1.5 text-sm text-brand-blue hover:text-brand-blue/70 transition-colors"
+                >
+                  在 Google 地圖開啟
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
               </div>
             </div>
 
@@ -279,6 +295,18 @@ const services = computed(() => [...(serviceList.value ?? []).map(s => s.title),
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- 地圖 -->
+    <section class="bg-brand-navy" aria-label="公司位置地圖">
+      <iframe
+        :src="mapEmbed"
+        title="錡利鑫實業有限公司位置（台中市大肚區博愛街52巷17號）"
+        class="block w-full h-80 sm:h-96 border-0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      />
     </section>
   </div>
 </template>

@@ -37,6 +37,11 @@ export default defineNuxtConfig({
         postalCode: '432',
         addressCountry: 'TW',
       },
+      geo: {
+        '@type': 'GeoCoordinates',
+        'latitude': 24.1620436,
+        'longitude': 120.5456824,
+      },
       areaServed: 'TW',
       openingHoursSpecification: [
         {
