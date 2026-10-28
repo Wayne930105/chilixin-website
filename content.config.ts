@@ -14,6 +14,7 @@ export const collections = {
       icon: z.string().optional(),
       industries: z.array(z.string()).optional(),
       tags: z.array(z.string()).optional(),
+      faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
       featured: z.boolean().default(false),
     }),
   }),

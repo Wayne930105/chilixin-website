@@ -56,6 +56,25 @@ const services = computed(() => [...(serviceList.value ?? []).map(s => s.title),
 const coords = '24.1620436,120.5456824'
 const mapEmbed = `https://www.google.com/maps?q=${coords}&hl=zh-TW&z=17&output=embed`
 const mapLink = `https://www.google.com/maps/search/?api=1&query=${coords}`
+
+const faq = [
+  {
+    q: '錡利鑫實業的服務範圍包含哪些地區？',
+    a: '公司位於台中市大肚區，服務範圍涵蓋全台灣，可依工程需求到廠勘查與施工。',
+  },
+  {
+    q: '要如何詢問工程報價？',
+    a: `可來電 04-26996011、透過 LINE 官方帳號（${LINE_ID}）或填寫本頁詢問表單，說明設備型式、工作壓力與施工需求，我們會與您聯繫並視需要安排現場勘查。`,
+  },
+  {
+    q: '營業時間是什麼時候？',
+    a: '週一至週五 08:00–17:30。非營業時間可先透過 LINE 或詢問表單留言，我們會於上班時間回覆。',
+  },
+  {
+    q: '錡利鑫實業提供哪些服務？',
+    a: '提供油壓高壓配管、管路油洗、液壓設備維護、液壓機械門製作、焊接工程與工業配管工程，主要服務精密機械、鋼鐵、模具與金屬加工等產業。',
+  },
+]
 </script>
 
 <template>
@@ -333,6 +352,13 @@ const mapLink = `https://www.google.com/maps/search/?api=1&query=${coords}`
             </form>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 常見問題 -->
+    <section class="py-16 bg-brand-navy">
+      <div class="section-container">
+        <FaqList :items="faq" class="max-w-4xl mx-auto" />
       </div>
     </section>
 

@@ -132,6 +132,9 @@ const photos = computed(() => [
               </div>
             </div>
           </div>
+
+          <!-- 常見問題 -->
+          <FaqList v-if="service.faq?.length" :items="service.faq" class="mt-14" />
         </div>
       </div>
     </section>
